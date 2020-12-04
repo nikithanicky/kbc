@@ -15,7 +15,6 @@ def isAnswerCorrect(question, answer):
 
 
 def lifeLine(ques):
-   
     if QUESTIONS[i]["answer"]==2:
         print("option2:" +QUESTIONS[i]["option2"])
         print("option4:" +QUESTIONS[i]["option4"])  
@@ -28,15 +27,17 @@ def lifeLine(ques):
     elif QUESTIONS[i]["answer"]==4:
         print("option2:" +QUESTIONS[i]["option2"])
         print("option4:" +QUESTIONS[i]["option4"])
-    
+        
     #import random
-    #if ques["answer"]==1
+    #if ques["answer"] == 1or2
     #option=["option1:"+ques["option1"], "option2:"+ques["option2"], "option3:"+ques["option3"], "option4:"+ques["option4"]]
     
-    #result= random.choices(option, k=2)
+   # result= random.choices(option, k=2)
 
-   # print(result)     
-    
+    #print(result)     
+    #print("ques["answer"]")
+
+
     '''
     :param ques: The question for which the lifeline is asked for. (Type JSON)
     :return: delete the key for two incorrect options and return the new ques value. (Type JSON)
@@ -101,12 +102,16 @@ for i in range(0, 15):
         # print the total money won.
         # See if the user has crossed a level, print that if yes
         print('\nCorrect !')
-        if (i+1 < 5):
-            print(f'you rewarded {QUESTIONS[i]["money"]}')
-        elif (i+1==5):
+        
+        
+        if (i+1==5):
             print("you reward is 10,000, you crossed first level")
+       # elif (i+1>5):
+       #     print(f'you rewarded {QUESTIONS[i]["money"]}')    
         elif (i+1==10):
-            print("you reward is 3,20,000, you crossed second level")    
+            print("you reward is 3,20,000, you crossed second level") 
+        else :
+            print(f'you rewarded {QUESTIONS[i]["money"]}')   
     else:
         # end the game now.
         # also print the correct answer
@@ -117,11 +122,9 @@ for i in range(0, 15):
         elif(i<9):
             print("your reward is 10,000")
         else:   
-            print(f'your reward is {QUESTIONS[i-1]["money"]}') 
+            print("your reward is 3,20,000") 
         break
     # print the total money won in the end.
 
 
 kbc()
-
-    
